@@ -4,35 +4,36 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  useHistory,
   Link
 } from "react-router-dom";
 import Home from './pages/home';
 import WizardChallenge from './pages/wizardchallenge';
 import MagicBabies from './pages/magicbabies';
+import 'bootstrap';
+import './index.scss';
 
+const HeaderTab = ({ title, path }) => <Link
+  className='header-tab btn btn-primary m-1'
+  to={path}>
+  {title}
+</Link>;
 
 const App = () => <Router>
   <div>
-    <ul>
-      <li>
-        <Link to="/pkmn/">Home</Link>
-      </li>
-      <li>
-        <Link to="/pkmn/wizard">Wizard</Link>
-      </li>
-      <li>
-        <Link to="/pkmn/magicbabies">Magic Babies</Link>
-      </li>
-    </ul>
-    <hr />
+    <div className='header mt-2 mb-2'>
+      <HeaderTab title='Home' path='/' />
+      <HeaderTab title='Wizard' path='/wizard' />
+      <HeaderTab title='Magic Babies' path='/magicbabies' />
+    </div>
     <Switch>
-      <Route exact path="/pkmn/">
+      <Route exact path="/">
         <Home />
       </Route>
-      <Route path="/pkmn/wizard">
+      <Route path="/wizard">
         <WizardChallenge />
       </Route>
-      <Route path="/pkmn/magicbabies">
+      <Route path="/magicbabies">
         <MagicBabies />
       </Route>
     </Switch>
@@ -42,4 +43,4 @@ const App = () => <Router>
 ReactDOM.render(
   <App />,
   document.getElementById('root')
-  );
+);
