@@ -15,24 +15,24 @@ const App = () => <Router>
   <div>
     <ul>
       <li>
-        <Link to="/">Home</Link>
+        <Link to="/pkmn/">Home</Link>
       </li>
       <li>
-        <Link to="/wizard">Wizard</Link>
+        <Link to="/pkmn/wizard">Wizard</Link>
       </li>
       <li>
-        <Link to="/magicbabies">Magic Babies</Link>
+        <Link to="/pkmn/magicbabies">Magic Babies</Link>
       </li>
     </ul>
     <hr />
     <Switch>
-      <Route exact path="/">
+      <Route exact path="/pkmn/">
         <Home />
       </Route>
-      <Route path="/wizard">
+      <Route path="/pkmn/wizard">
         <WizardChallenge />
       </Route>
-      <Route path="/magicbabies">
+      <Route path="/pkmn/magicbabies">
         <MagicBabies />
       </Route>
     </Switch>

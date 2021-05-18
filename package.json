@@ -1,13 +1,14 @@
 {
   "name": "pkmn",
   "version": "0.1.0",
-  "private": true,
-  "homepage": "http://kaktusgris.github.io/pkmn",
+  "homepage": "https://kaktusgris.github.io/pkmn/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "test": "react-scripts test",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "eject": "react-scripts eject"
   },
   "dependencies": {
     "react": "^17.0.2",
