@@ -34,18 +34,19 @@ const WizardChallenge = () => {
         setPokemonTeam(team);
     }
 
-    const PokemonLine = ({basic, stage1, stage2, index}) => {
+    const PokemonLine = ({ basic, stage1, stage2, index }) => {
         if (!basic) return null;
         const name = stage2 ? stage2.name : stage1 ? stage1.name : basic.name;
         return (
-            <div>
-                <div className='pokemon-name p-2' onClick={() => getRandomLineWithsprites().then(line => replacePokemonAtIndex(line, index))}>
+            <div className='pokemonline'>
+                <div className='pokemonline-name' onClick={() => getRandomLineWithsprites().then(line => replacePokemonAtIndex(line, index))}>
                     {capitalise(name)}
-                    <img src={basic.sprite} alt={basic.name} />
-                    {stage1 && <img src={stage1.sprite} alt={stage1.name} />}
-                    {stage2 && <img src={stage2.sprite} alt={stage2.name} />}
                 </div>
-            </div>);
+                <img src={basic.sprite} alt={basic.name} />
+                {stage1 && <img src={stage1.sprite} alt={stage1.name} />}
+                {stage2 && <img src={stage2.sprite} alt={stage2.name} />}
+            </div>
+        );
     }
 
     return (
@@ -54,12 +55,12 @@ const WizardChallenge = () => {
             <div className='buttons m-2'>
                 <div className='generate-button btn btn-primary m-1' onClick={generateChallenge}> Generate </div>
             </div>
-            <hr/>
+            <hr />
             {letters && !loading && <h2>{letters}</h2>}
             {loading && <Spinner />}
             <div className='column'>
                 {pokemonTeam?.map((line, i) => (
-                    <PokemonLine basic={line[0]} stage1={line[1]} stage2={line[2]} index={i}/>
+                    <PokemonLine basic={line[0]} stage1={line[1]} stage2={line[2]} index={i} />
                 ))}
             </div>
         </div>
