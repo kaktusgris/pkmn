@@ -17,15 +17,21 @@ html, .header, body {
     border-radius: $card-rounding;
 }
 
+.home-tab img {
+    height: 2rem;
+    padding-right: 0.5rem;
+    &:hover {
+        filter: brightness(80%);
+    }
+}
+
 .btn-primary, .btn-primary:active, .btn-primary:visited {
     color: $midnight-green;
     background-color: $jasmine;
     border-color: darken($color: $jasmine, $amount: 30%);
     
     &:hover{
-        color: darken($midnight-green, $amount: 30%);
-        background-color: darken($color: $jasmine, $amount: 30%);
-        border-color: darken($color: $jasmine, $amount: 90%);
+        filter: brightness(80%);
     }
 
     &.disabled {
