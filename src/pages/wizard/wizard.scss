@@ -1,0 +1,14 @@
+@import "../../variables";
+
+.wizard {
+    .generate-button {
+    }
+    
+    .pokemon-name {
+    
+        &:hover {
+            cursor: pointer;
+            text-decoration: line-through;
+        }
+    }
+}

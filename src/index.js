@@ -20,7 +20,7 @@ const HeaderTab = ({ title, path }) =>
   </Link>;
 
 const Header = () =>
-  <div className='header mt-2 mb-2'>
+  <div className='header'>
     <HeaderTab title='Home' path='' />
     <HeaderTab title='Wizard' path='wizard' />
     <HeaderTab title='Magic Babies' path='magicbabies' />

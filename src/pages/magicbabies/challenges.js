@@ -1,3 +1,5 @@
+import {randomFromList} from '../../utils/random';
+
 let challengesRemoved = [];
 let challengesAvailable = ["You must play with at least 5 stage 2 evolutions in your deck.",
     "You may draw 1 additional card at the start of the match.",
@@ -119,16 +121,8 @@ let challengesAvailable = ["You must play with at least 5 stage 2 evolutions in 
     "GX Trainer: Hex maniac (plus poke-powers and poke-bodies)",
     "GX Trainer: Maxie's/Archie's"];
 
-const randomInterval = (length) => {
-    const number = Math.floor(Math.random() * (length) * 1.1);
-    if (number >= length) {
-        return randomInterval(length);
-    }
-    return number;
-}
-
 export const getChallenge = () => {
-    return challengesAvailable[randomInterval(challengesAvailable.length)];
+    return randomFromList(challengesAvailable);
 }
 
 export const getAllChallenges = () => {

@@ -1,4 +1,36 @@
 @import "~bootstrap/scss/bootstrap";
+@import "./variables";
 
-.header-tab {
+html, .header, body {
+    background-color: $midnight-green;
+}
+
+.header {
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.card {
+    background-color: $morning-blue;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: $card-rounding;
+}
+
+.btn-primary, .btn-primary:active, .btn-primary:visited {
+    color: $midnight-green;
+    background-color: $jasmine;
+    border-color: darken($color: $jasmine, $amount: 30%);
+    
+    &:hover{
+        color: darken($midnight-green, $amount: 30%);
+        background-color: darken($color: $jasmine, $amount: 30%);
+        border-color: darken($color: $jasmine, $amount: 90%);
+    }
+
+    &.disabled {
+        color: lighten($midnight-green, $amount: 10%);
+        background-color: lighten($color: $jasmine, $amount: 10%);
+        border-color: $jasmine;
+    }
 }
