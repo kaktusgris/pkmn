@@ -4,15 +4,15 @@ import { randomLetters } from '../../utils/random';
 import { capitalise } from '../../utils/utils';
 import './wizard.scss';
 import Spinner from '../../common/spinner';
-
-const numberOfPokemon = 6;
-const numberOfLetters = 3;
+import Settings from './settings';
 
 const WizardChallenge = () => {
-
-    const [loading, setLoading] = useState(false);
+    const [numberOfPokemon, setNumberOfPokemon] = useState(6);
+    const [numberOfLetters, setNumberOfLetters] = useState(3);
     const [pokemonTeam, setPokemonTeam] = useState(null); // [{dex, name, sprite}, {dex, name, sprite}]
     const [letters, setLetters] = useState('');
+    const [showSettings, setShowSettings] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     const finishedTeam = (team) => {
         setPokemonTeam(team);
@@ -23,7 +23,7 @@ const WizardChallenge = () => {
         setPokemonTeam(null);
         setLoading(true);
 
-        getManyPokemonLines(6)
+        getManyPokemonLines(numberOfPokemon)
             .then(finishedTeam);
         setLetters(randomLetters(numberOfLetters));
     }
@@ -47,15 +47,19 @@ const WizardChallenge = () => {
                 {stage2 && <img src={stage2.sprite} alt={stage2.name} />}
             </div>
         );
-    }
+    };
 
     return (
         <div className='wizard card'>
-            <h1>Wizard Challenge</h1>
+            <div className='d-flex'>
+                <h1 className='title'>Wizard Challenge</h1>
+                <img className='settings m-1' src='images/gear.png' onClick={()=>setShowSettings(!showSettings)}/>
+            </div>
             <div className='buttons m-2'>
                 <div className='generate-button btn btn-primary m-1' onClick={generateChallenge}> Generate </div>
             </div>
             <hr />
+            {showSettings && <Settings pokemons={numberOfPokemon} letters={numberOfLetters} updatePokemons={setNumberOfPokemon} updateLetters={setNumberOfLetters}/>}
             {letters && !loading && <h2>{letters}</h2>}
             {loading && <Spinner />}
             <div className='column'>

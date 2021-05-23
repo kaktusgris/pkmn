@@ -14,7 +14,7 @@ import './index.scss';
 
 const HomeTab = () =>
   <Link className='home-tab m-1' to="/pkmn/">
-    <img src='favicon.ico' alt='home' />
+    <img src='images/favicon.ico' alt='home' />
   </Link>
 
 const HeaderTab = ({ title, path }) =>
