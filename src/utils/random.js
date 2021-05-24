@@ -17,10 +17,12 @@ const randomLetter = (ignored = '') => {
     return chars.charAt(randomInterval(chars.length));
 }
 
+const sort = (str) => str.split('').sort((a, b) => a.localeCompare(b)).join('');
+
 export const randomLetters = (numberOfLetters) => {
     let letters = '';
     for (let i = 0; i < numberOfLetters; i++) {
         letters += randomLetter(letters);
     }
-    return letters;
+    return sort(letters);
 }
