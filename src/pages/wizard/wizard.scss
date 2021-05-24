@@ -7,10 +7,13 @@
         &:hover {
             cursor: pointer;
         }
+
     }  
+    .error-message {
+        color: $orange-pantone;
+    }
 
     .pokemonline-name {
-    
         &:hover {
             cursor: pointer;
             text-decoration: line-through;

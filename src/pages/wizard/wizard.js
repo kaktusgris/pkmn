@@ -53,20 +53,20 @@ const WizardChallenge = () => {
         <div className='wizard card'>
             <div className='d-flex'>
                 <h1 className='title'>Wizard Challenge</h1>
-                <img className='settings m-1' src='images/gear.png' onClick={()=>setShowSettings(!showSettings)}/>
+                <img className='settings m-1' src='images/gear.png' onClick={() => setShowSettings(!showSettings)} />
             </div>
+            {showSettings && <Settings pokemons={numberOfPokemon} letters={numberOfLetters} updatePokemons={setNumberOfPokemon} updateLetters={setNumberOfLetters} />}
             <div className='buttons m-2'>
                 <div className='generate-button btn btn-primary m-1' onClick={generateChallenge}> Generate </div>
             </div>
             <hr />
-            {showSettings && <Settings pokemons={numberOfPokemon} letters={numberOfLetters} updatePokemons={setNumberOfPokemon} updateLetters={setNumberOfLetters}/>}
             {letters && !loading && <h2>{letters}</h2>}
             {loading && <Spinner />}
-            <div className='column'>
-                {pokemonTeam?.map((line, i) => (
-                    <PokemonLine basic={line[0]} stage1={line[1]} stage2={line[2]} index={i} />
+            {pokemonTeam && <div className='column'>
+                {pokemonTeam.map((line, i) => (
+                    <PokemonLine basic={line[0]} stage1={line[1]} stage2={line[2]} index={i} key={'pokemonline-' + i} />
                 ))}
-            </div>
+            </div>}
         </div>
     );
 }

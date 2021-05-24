@@ -11,8 +11,9 @@ export const randomFromList = (list) => {
 }
 
 const randomLetter = (ignored = '') => {
-    const regex = '[' + ignored.split('').join(',') + ']';
-    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.replace(regex, '');
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
+        .filter(c => !ignored.includes(c)).join('');
+    if (chars.length === 0) return '.';
     return chars.charAt(randomInterval(chars.length));
 }
 
