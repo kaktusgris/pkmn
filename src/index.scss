@@ -10,11 +10,11 @@ html, .header, body {
     margin-left: 1rem;
 }
 
-.card {
+.content {
     background-color: $morning-blue;
     margin: 1rem;
     padding: 1rem;
-    border-radius: $card-rounding;
+    border-radius: 1rem;
 }
 
 .home-tab img {
@@ -25,7 +25,7 @@ html, .header, body {
     }
 }
 
-.btn-primary, .btn-primary:active, .btn-primary:visited, .btn-primary:focus {
+.btn-primary, .btn-primary:active, .btn-primary:visited, .btn-primary:focus, .btn-primary:hover {
     color: $midnight-green;
     background-color: $jasmine;
     border-color: darken($color: $jasmine, $amount: 30%);

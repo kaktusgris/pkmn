@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
+import {isPositiveInteger} from '../../utils/utils';
 import './wizard.scss';
-
-const ErrorMessage = (message) => {
-    if (!message) return null;
-    return
-}
 
 const SettingInput = ({ text, value, handleChange, errorMessage }) => (
     <div className='setting-input'>
@@ -41,6 +37,7 @@ const Settings = ({ pokemons, letters, updatePokemons, updateLetters }) => {
                     text='#pokemon'
                     value={pokemons}
                     handleChange={(p) => {
+                        if (!isPostiveInteger(p)) return;
                         if (p > 10) return setPokemonsError('Kan ikke ha mer enn 10 pokemon');
                         setPokemonsError(false);
                         updatePokemons(p);

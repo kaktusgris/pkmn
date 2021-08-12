@@ -23,13 +23,14 @@ const MagicBabies = () => {
     }
 
     const addCard = () => {
-        getRandomStadiumText((card) => setChallenges([...challenges, card]));
+        getRandomStadiumText()
+            .then((card) => setChallenges([...challenges, card]));
     }
 
     const clearClass = challenges.length === 0 ? 'btn btn-primary m-1 disabled' : 'btn btn-primary m-1';
 
     return (
-        <div className='magicbabies card'>
+        <div className='magicbabies content'>
             <h1>Magic babies</h1>
             <div>
                 <div className='btn btn-primary m-1' onClick={() => addChallenge(1)}> New Challenge </div>

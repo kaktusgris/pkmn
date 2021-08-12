@@ -13,10 +13,29 @@
         color: $orange-pantone;
     }
 
-    .pokemonline-name {
-        &:hover {
+    .pokemon-line {
+        margin-right: 1rem;
+
+        .placeholer-sprite {
+            width: 96px;
+            height: 96px;
+            content:url("data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==");
+
+        }
+
+        .pokemonline-name:hover {
             cursor: pointer;
             text-decoration: line-through;
+        }
+    }
+
+    .letters {
+        .main-letters:hover {
+            cursor: pointer;
+            text-decoration: line-through;
+        }
+        .card {
+            max-width: 9rem;
         }
     }
 }

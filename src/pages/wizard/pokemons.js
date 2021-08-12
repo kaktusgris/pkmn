@@ -5,7 +5,7 @@ export const getPokemon = () => pokeapi.getRandomPokemon();
 export const getManyPokemon = (n) => {
     let promises = [];
     for (let i = 0; i < n; i++) {
-        promises.push(pokeapi.getRandomPokemonDirectly());
+        promises.push(pokeapi.getRandomPokemon());
     };
     return Promise.all(promises);
 };
@@ -43,16 +43,16 @@ export const getRandomLineWithspritesOld = () => {
     return getPokemonLine(pokeapi.getRandomPokedexNr())
         .then(response => {
             Promise.all(response.map(p => pokeapi.getPokemon(p)))
-                .then(data => data.map(p => ({ name: p.name, sprite: p.sprites.front_default })));
+                .then(data => data.map(p => ({ dex: p.id, name: p.name, sprite: p.sprites.front_default })));
         });
 };
 
 export const getRandomLineWithsprites = () => {
-    return getPokemonLine(pokeapi.getRandomPokedexNr())
-        .then(response =>
-            Promise.all(response.map(p => pokeapi.getPokemon(p)))
-                .then(data => data.map(p => ({ name: p.name, sprite: p.sprites.front_default })))
-        );
+    return pokeapi.getRandomLine()
+        .then(data => {
+            Promise.all(data.map(p => pokeapi.getPokemon(p)))
+                .then(data => data.map(p => ({ dex: p.id, name: p.name, sprite: p.sprites.front_default })));
+        });
 };
 
 export const getManyPokemonLines = (n) => {
