@@ -1,0 +1,1 @@
+Last opp ny build med `npm run deploy`

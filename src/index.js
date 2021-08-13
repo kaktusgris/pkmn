@@ -9,6 +9,7 @@ import {
 import Home from './pages/home';
 import WizardChallenge from './pages/wizard/wizard';
 import MagicBabies from './pages/magicbabies/magicbabies';
+import Rules from './pages/rules/rules';
 import 'bootstrap';
 import './index.scss';
 
@@ -29,6 +30,7 @@ const Header = () =>
     <HomeTab />
     <HeaderTab title='Wizard' path='wizard' />
     <HeaderTab title='Magic Babies' path='magicbabies' />
+    <HeaderTab title='Rules' path='rules' />
   </div>;
 
 const App = () =>
@@ -44,6 +46,9 @@ const App = () =>
         </Route>
         <Route path="/pkmn/magicbabies">
           <MagicBabies />
+        </Route>
+        <Route path="/pkmn/rules">
+          <Rules />
         </Route>
       </Switch>
     </div>
