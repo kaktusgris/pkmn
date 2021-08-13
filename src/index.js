@@ -12,6 +12,7 @@ import MagicBabies from './pages/magicbabies/magicbabies';
 import Rules from './pages/rules/rules';
 import 'bootstrap';
 import './index.scss';
+import Button from './common/button';
 
 const HomeTab = () =>
   <Link className='home-tab m-1' to="/pkmn/">
@@ -19,10 +20,8 @@ const HomeTab = () =>
   </Link>
 
 const HeaderTab = ({ title, path }) =>
-  <Link
-    className='header-tab btn btn-primary m-1'
-    to={"/pkmn/" + path}>
-    {title}
+  <Link className='header-tab' to={"/pkmn/" + path}>
+    {<Button title={title} />}
   </Link>;
 
 const Header = () =>

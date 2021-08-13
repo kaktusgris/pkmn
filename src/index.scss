@@ -24,19 +24,3 @@ html, .header, body {
         filter: brightness(80%);
     }
 }
-
-.btn-primary, .btn-primary:active, .btn-primary:visited, .btn-primary:focus {
-    color: $midnight-green;
-    background-color: $jasmine;
-    border-color: darken($color: $jasmine, $amount: 30%);
-    
-    &:hover{
-        filter: brightness(80%);
-    }
-
-    &.disabled {
-        color: lighten($midnight-green, $amount: 10%);
-        background-color: lighten($color: $jasmine, $amount: 10%);
-        border-color: $jasmine;
-    }
-}

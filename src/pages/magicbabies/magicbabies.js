@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import {getChallenge, getAllChallenges} from './challenges';
+import { getChallenge, getAllChallenges } from './challenges';
 import { getRandomStadiumText } from '../../api/tcgapi';
 import './magicbabies.scss';
+import Button from '../../common/button';
 
 const MagicBabies = () => {
     const [challenges, setChallenges] = useState([]);
@@ -13,11 +14,11 @@ const MagicBabies = () => {
         }
         setChallenges([...challenges, ...newChallenges]);
     }
-    
+
     const addAllChallenges = () => {
         setChallenges(getAllChallenges());
     }
-    
+
     const clearChallenges = () => {
         setChallenges([]);
     }
@@ -26,19 +27,17 @@ const MagicBabies = () => {
         getRandomStadiumText((card) => setChallenges([...challenges, card]));
     }
 
-    const clearClass = challenges.length === 0 ? 'btn btn-primary m-1 disabled' : 'btn btn-primary m-1';
-
     return (
         <div className='magicbabies card'>
             <h1>Magic babies</h1>
             <div>
-                <div className='btn btn-primary m-1' onClick={() => addChallenge(1)}> New Challenge </div>
-                <div className='btn btn-primary m-1'  onClick={() => addChallenge(3)}> 3 Challenges </div>
-                <div className='btn btn-primary m-1' onClick={addAllChallenges}> Show All </div>
+                <Button title='New Challenge' onClick={() => addChallenge(1)} />
+                <Button title='3 Challenges' onClick={() => addChallenge(3)} />
+                <Button title='Show All' onClick={addAllChallenges} />
             </div>
             <div>
-                <div className='btn btn-primary m-1' onClick={addCard}> Stadium </div>
-                <div className={clearClass}  onClick={clearChallenges}> Clear </div>
+                <Button title='Stadium' onClick={addCard} />
+                <Button title='Clear' onClick={clearChallenges} disabled={challenges.length === 0} />
             </div>
             <ul>
                 {challenges.map(c => (

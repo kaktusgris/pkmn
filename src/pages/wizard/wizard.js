@@ -5,6 +5,7 @@ import { capitalise } from '../../utils/utils';
 import './wizard.scss';
 import Spinner from '../../common/spinner';
 import Settings from './settings';
+import Button from '../../common/button';
 
 const WizardChallenge = () => {
     const [numberOfPokemon, setNumberOfPokemon] = useState(6);
@@ -39,7 +40,14 @@ const WizardChallenge = () => {
         const name = stage2 ? stage2.name : stage1 ? stage1.name : basic.name;
         return (
             <div className='pokemonline'>
-                <div className='pokemonline-name' onClick={() => getRandomLineWithsprites().then(line => replacePokemonAtIndex(line, index))}>
+                <div className='pokemonline-name' onClick={() => {
+                    setLoading(true);
+                    getRandomLineWithsprites()
+                        .then(line => {
+                            replacePokemonAtIndex(line, index);
+                            setLoading(false);
+                        })
+                }}>
                     {capitalise(name)}
                 </div>
                 <img src={basic.sprite} alt={basic.name} />
@@ -57,7 +65,7 @@ const WizardChallenge = () => {
             </div>
             {showSettings && <Settings pokemons={numberOfPokemon} letters={numberOfLetters} updatePokemons={setNumberOfPokemon} updateLetters={setNumberOfLetters} />}
             <div className='buttons m-2'>
-                <div className='generate-button btn btn-primary m-1' onClick={generateChallenge}> Generate </div>
+                <Button className='generate-button' onClick={generateChallenge} title='Generate' />
             </div>
             <hr />
             {letters && !loading && <h2>{letters}</h2>}

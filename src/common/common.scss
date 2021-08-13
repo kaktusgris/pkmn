@@ -1,0 +1,17 @@
+@import "./../variables";
+
+.btn-primary, .btn-primary:active, .btn-primary:visited, .btn-primary:focus {
+    color: $midnight-green !important;
+    background-color: $jasmine !important;
+    border-color: darken($color: $jasmine, $amount: 30%) !important;
+    
+    &:hover{
+        filter: brightness(80%) !important;
+    }
+
+    &.disabled {
+        color: lighten($midnight-green, $amount: 10%);
+        background-color: lighten($color: $jasmine, $amount: 10%);
+        border-color: $jasmine;
+    }
+}
