@@ -13,6 +13,7 @@ import Rules from './pages/rules/rules';
 import 'bootstrap';
 import './index.scss';
 import Button from './common/button';
+import Decklists from './pages/decklists/decklists';
 
 const HomeTab = () =>
   <Link className='home-tab m-1' to="/pkmn/">
@@ -29,6 +30,7 @@ const Header = () =>
     <HomeTab />
     <HeaderTab title='Wizard' path='wizard' />
     <HeaderTab title='Magic Babies' path='magicbabies' />
+    <HeaderTab title='Decklists' path='decklists' />
     <HeaderTab title='Rules' path='rules' />
   </div>;
 
@@ -46,6 +48,9 @@ const App = () =>
         <Route path="/pkmn/magicbabies">
           <MagicBabies />
         </Route>
+        <Route path = "/pkmn/decklists">
+          <Decklists />
+          </Route>
         <Route path="/pkmn/rules">
           <Rules />
         </Route>
