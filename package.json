@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.0.1",
+    "list-react-files": "^0.2.0",
     "pokemontcgsdk": "^2.0.0",
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.0",
@@ -19,7 +20,8 @@
     "react-loader-spinner": "^4.0.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
-    "sass": "^1.32.13"
+    "sass": "^1.32.13",
+    "xlsx": "^0.17.1"
   },
   "devDependencies": {
     "gh-pages": "^3.1.0"
