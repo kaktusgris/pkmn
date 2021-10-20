@@ -191,21 +191,21 @@ export const yanmega = `Yanmega
 4	Yanmega
 4	Yanma
 1	Leafeon lv.X
-3	Leafeon
-3	Eevee
-1	Shaymin lv.X
-1	Shaymin
-1	Claydol
-1	Baltoy
+2	Leafeon
+2	Eevee
+2	Claydol
+2	Baltoy
 1	Uxie
+1	Lunatone
 4	Bebe's Search
 4	Felicity's Drawing
-4	Volkner's Philosophy
+4	Roseanne's Research
+2	Volkner's Philosophy
 3	Warp Point
 3	Switch
-2	VS Seeker
 1	Premier Ball
 1	Luxury Ball
+1	VS Seeker
 2	Expert belt
 3	Broken Time Space
 13	Grass`
