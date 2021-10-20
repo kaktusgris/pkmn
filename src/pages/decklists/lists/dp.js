@@ -190,7 +190,7 @@ export const flygon = `Flygon
 export const yanmega = `Yanmega	
 4	Yanmega
 4	Yanma
-1	Leafeon lv.X
+2	Leafeon lv.X
 2	Leafeon
 2	Eevee
 2	Claydol
@@ -200,11 +200,10 @@ export const yanmega = `Yanmega
 4	Bebe's Search
 4	Felicity's Drawing
 4	Roseanne's Research
-2	Volkner's Philosophy
 3	Warp Point
 3	Switch
 1	Premier Ball
-1	Luxury Ball
+2	Luxury Ball
 1	VS Seeker
 2	Expert belt
 3	Broken Time Space
