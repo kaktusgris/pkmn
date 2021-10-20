@@ -180,13 +180,13 @@ export const flygon = `Flygon
 4	Flygon
 1	Vibrava
 4	Trapinch
-3	Accelgor
+2	Accelgor
 3	Shelmet
 1	Dusknoir
 1	Duskull
 1	Musharna
 1	Munna
-1	MewEX
+2	MewEX
 1	KeldeoEX
 4	Skyla
 4	N
